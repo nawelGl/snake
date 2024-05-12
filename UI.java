@@ -25,19 +25,28 @@ public class UI {
         gameTitleLabel.setText("Snake, the game");
         gameTitleLabel.setForeground(Color.WHITE);
         gameTitleLabel.setFont(new Font("Avenir", Font.BOLD, 28));
-        gameTitleLabel.setBounds(150, 40, 300,40);
+        gameTitleLabel.setBounds(145, 40, 300,40);
         titlePanel.add(gameTitleLabel);
         userInterface.getContentPane().add(BorderLayout.NORTH, titlePanel);
 
         //Panel de jeu :
         gamePanel = new JPanel();
         gamePanel.setBackground(Color.decode("#E5E8E8"));
+        gamePanel.setLayout(new GridBagLayout());
+        
         userInterface.getContentPane().add(BorderLayout.CENTER, gamePanel);
 
         //Panel de score :
         scorePanel = new JPanel();
         scorePanel.setBackground(Color.decode("#E1C9DF"));
         scorePanel.setPreferredSize(new Dimension(longueur, 100));
+        scorePanel.setLayout(null);
+        JLabel scoreLabelTitre = new JLabel();
+        scoreLabelTitre.setText("Votre score :");
+        scoreLabelTitre.setForeground(Color.WHITE);
+        scoreLabelTitre.setFont(new Font("Avenir", Font.BOLD, 20));
+        scoreLabelTitre.setBounds(200, 25, 200,40);
+        scorePanel.add(scoreLabelTitre);
         userInterface.getContentPane().add(BorderLayout.SOUTH, scorePanel);
 
 
