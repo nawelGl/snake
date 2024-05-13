@@ -12,6 +12,7 @@ public class UI implements KeyListener {
     private JPanel gamePanel;
     private JPanel scorePanel;
     private GridBagConstraints gbc;
+    private Snake snake;
 
     public UI(){
         userInterface = new JFrame();
@@ -56,6 +57,10 @@ public class UI implements KeyListener {
                 caseJeu.setPreferredSize(new Dimension(50, 50));
             }
         }
+        snake = new Snake();
+        snake.displaySnake(gbc, gamePanel);
+        userInterface.getContentPane().repaint();
+        userInterface.getContentPane().revalidate();
         userInterface.getContentPane().add(BorderLayout.CENTER, gamePanel);
 
         //Panel de score :
